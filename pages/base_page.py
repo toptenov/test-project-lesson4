@@ -22,7 +22,7 @@ class BasePage():
         text_in_element = self.browser.find_element(how, what).text
         print (f"text_in_element = {text_in_element}, text = {text}")
         try:
-            text_in_element == text
+            assert str(text) in text_in_element
         except:
             return False
         return True
