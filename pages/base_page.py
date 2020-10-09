@@ -1,4 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoAlertPresentException
 import math
 
 class BasePage():
@@ -22,7 +23,7 @@ class BasePage():
         text_in_element = self.browser.find_element(how, what).text
         print (f"text_in_element = {text_in_element}, text = {text}")
         try:
-            assert str(text) in text_in_element
+            assert str(text) == text_in_element
         except:
             return False
         return True
