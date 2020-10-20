@@ -15,3 +15,32 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.should_be_correct_book_name(book_name)
     page.should_be_price_message()
     page.should_be_correct_book_price(book_price)
+
+@pytest.mark.parametrize('link', [pytest.param("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7", marks=pytest.mark.xfail)])
+
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser, link):
+    page = ProductPage(browser, link)
+    page.open()
+    book_name = page.define_book_name()
+    book_price = page.define_book_price()
+    page.add_product_in_basket()
+    page.solve_quiz_and_get_code()
+    page.should_not_be_success_message()
+
+@pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7"])
+
+def test_guest_cant_see_success_message(browser, link):
+    page = ProductPage(browser, link)
+    page.open()
+    page.should_not_be_success_message()
+
+@pytest.mark.parametrize('link', [pytest.param("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7", marks=pytest.mark.xfail)])
+
+def test_message_disappeared_after_adding_product_to_basket(browser, link):
+    page = ProductPage(browser, link)
+    page.open()
+    book_name = page.define_book_name()
+    book_price = page.define_book_price()
+    page.add_product_in_basket()
+    page.solve_quiz_and_get_code()
+    page.should_disappear_success_message()
