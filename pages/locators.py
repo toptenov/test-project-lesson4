@@ -18,3 +18,8 @@ class ProductPageLocators():
 
 class BasePageLocators():
 	LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+	BASKET_LINK = (By.CSS_SELECTOR, ".btn-group a.btn.btn-default")
+
+class BasketPageLocators():
+	BASKET_ITEMS_BLOCK = (By.CSS_SELECTOR, ".basket-items")
+	TEXT_OF_EMPTY_BASKET = (By.XPATH, "//p[contains(text(), 'Your basket is empty.')]")
