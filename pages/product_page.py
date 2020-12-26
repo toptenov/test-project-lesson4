@@ -3,6 +3,9 @@ from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
 
+    def __init__(self, *args, **kwargs):
+        super(ProductPage, self).__init__(*args, **kwargs)
+
     def define_book_name(self):
         book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME).text
         return book_name

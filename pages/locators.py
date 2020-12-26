@@ -15,3 +15,6 @@ class ProductPageLocators():
 	BOOK_NAME = (By.CSS_SELECTOR, "div.col-sm-6.product_main h1")
 	BOOK_PRICE = (By.CSS_SELECTOR, "div.col-sm-6.product_main p.price_color")
 	SUCCESS_MESSAGE = (By.XPATH, "//div[@id='messages']/div[1]")
+
+class BasePageLocators():
+	LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
