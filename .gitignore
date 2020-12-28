@@ -1,4 +1,4 @@
 .pytest_cache
 __pycache__
-.gitignore
-README.md
+/.gitignore
+/README.md
