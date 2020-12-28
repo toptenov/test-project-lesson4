@@ -16,3 +16,6 @@ def browser(request):
 	print("\nquit browser..")
 	browser.quit()
 	
+def pytest_configure(config):
+    config.addinivalue_line("markers", "user_adds_product: marks test to run only on mark 'user_adds_product'")
+    config.addinivalue_line("markers", "login_guest: marks test to run only on mark 'login_guest'")
