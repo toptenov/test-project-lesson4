@@ -1,7 +1,7 @@
 from pages.product_page import ProductPage
 from pages.login_page import LoginPage
 from pages.basket_page import BasketPage
-import time # Можно удалить
+import time
 import pytest
 
 @pytest.mark.user_adds_product

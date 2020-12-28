@@ -2,7 +2,6 @@ from pages.main_page import MainPage
 from pages.basket_page import BasketPage
 from pages.login_page import LoginPage
 import pytest
-import time # Можно удалить
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
